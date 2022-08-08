@@ -1,0 +1,20 @@
+“checkJuniperCLIAccess-Test”
+version: '2.0'
+checkJuniperCLIAccess:
+  description: this is a sample workflow to test Juniper CLI access by Saju
+  type: direct
+  tags:
+    - juniper
+  input:
+    - neId: '69.158.196.104'
+  tasks:
+    task1:
+      action: nsp.mdm_cli
+      input:
+        neId: '<% $.neId %>'
+        cmds:
+          - "show version"
+        closeSession: true
+        idleTimeOut: 20
+      publish:
+        status: <% task().result %>
