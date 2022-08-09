@@ -1,4 +1,4 @@
-version: '2.0'
+version: '2.0.1'
 
 checkJuniperCLIAccess:
   description: this is a sample workflow to test Juniper CLI access by Saju
